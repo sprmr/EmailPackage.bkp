@@ -21,7 +21,7 @@ class EmailController extends Controller
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
 				    $table->text('mail_message');
-				    $table->string('mail_remarks', 255);
+				    $table->string('mail_remarks', 255)->nullable();
 				    $table->integer('attempt')->default(0);
 				    $table->dateTime('created_at');
 				    $table->dateTime('updated_at');
@@ -33,7 +33,7 @@ class EmailController extends Controller
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
 				    $table->text('mail_message');
-				    $table->string('mail_remarks', 255);
+				    $table->string('mail_remarks', 255)->nullable();
 				    $table->integer('attempt');
 				    $table->dateTime('created_at');
 				   
@@ -48,7 +48,7 @@ class EmailController extends Controller
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
 				    $table->text('mail_message');
-				    $table->string('mail_remarks', 255);
+				    $table->string('mail_remarks', 255)->nullable();
 				    $table->dateTime('created_at');
 				    
 				});
