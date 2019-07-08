@@ -17,7 +17,7 @@ class EmailController extends Controller
             Schema::create('email_logs', function (Blueprint $table) {
 				    $table->increments('id');
 				    $table->integer('status')->default(0);
-				    $table->string('error_message', 255)->nullable();
+				    $table->text('error_message')->nullable();
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
 				    $table->text('mail_message');
@@ -44,7 +44,7 @@ class EmailController extends Controller
             Schema::create('failed_email_logs', function (Blueprint $table) {
 				    $table->increments('id');
 				    $table->integer('status');
-				    $table->string('error_message', 255);
+				    $table->text('error_message');
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
 				    $table->text('mail_message');
