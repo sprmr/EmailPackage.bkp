@@ -15,7 +15,7 @@ class EmailServiceProvider extends ServiceProvider
     public function register()
     {
          $this->app->make('Email\SendEmail\EmailController');
-          $this->loadViewsFrom(__DIR__.'/views', 'sendemail');
+         // $this->loadViewsFrom(__DIR__.'/views', 'sendemail');
     }
 
     /**
@@ -26,6 +26,7 @@ class EmailServiceProvider extends ServiceProvider
  
 
     public function boot(\Illuminate\Routing\Router $router) {
+        $this->loadViewsFrom(__DIR__.'/views', 'sendemail');
         include __DIR__.'/routes/web.php';
         $this->commands([
             \Email\SendEmail\Console\Commands\CronEmail ::class,
