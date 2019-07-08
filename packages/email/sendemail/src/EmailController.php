@@ -93,9 +93,9 @@ class EmailController extends Controller
                 }
     
             }
-          echo 'saved';
+          return true;
          }else{
-           echo false;
+           return false;
          }
          die;
 
