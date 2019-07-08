@@ -16,7 +16,7 @@ class EmailController extends Controller
      	if(!Schema::hasTable('email_logs')){
             Schema::create('email_logs', function (Blueprint $table) {
 				    $table->increments('id');
-				    $table->integer('status');
+				    $table->integer('status')->default(0);
 				    $table->string('error_message', 255);
 				    $table->string('to_address', 255);
 				    $table->string('mail_subject', 255);
